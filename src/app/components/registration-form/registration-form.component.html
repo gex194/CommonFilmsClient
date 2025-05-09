@@ -1,0 +1,36 @@
+<div
+  class="flex flex-col w-100 gap-5 items-center mx-auto rounded-xl p-6 shadow-lg outline outline-black/5
+dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+  <div>
+    <h1 class="text-center text-3xl dark:text-white">Sign-Up</h1>
+  </div>
+  <div class="dark:bg-slate-300 rounded-2xl w-full h-0.5"></div>
+  <div id="name_input" class="flex flex-col w-full gap-4">
+    <label for="name" class="text-center dark:text-white text-xl">Name</label>
+    <input required type="text" placeholder="Name" [formControl]="name"
+           class="input input-bordered text-center rounded-lg p-2 dark:text-white dark:bg-slate-700"/>
+  </div>
+  <div id="email_input" class="flex flex-col w-full gap-4">
+    <label for="email" class="text-center dark:text-white text-xl">Email</label>
+    <input required type="text" placeholder="Email" [formControl]="email"
+           class="input input-bordered text-center rounded-lg p-2 dark:text-white dark:bg-slate-700"/>
+  </div>
+  <div id="password_input" class="flex flex-col w-full gap-4">
+    <label for="password" class="text-center dark:text-white text-xl">Password</label>
+    <input required type="password" placeholder="Password" [formControl]="password"
+           class=" w-full input input-bordered text-center rounded-lg p-2 dark:text-white dark:bg-slate-700"/>
+  </div>
+  <div id="password-confirm" class="flex flex-col w-full gap-4">
+    <label for="password" class="text-center dark:text-white text-xl">Confirm password</label>
+    <input required type="password" placeholder="Confirm password" [formControl]="confirmPassword"
+           class=" w-full input input-bordered text-center rounded-lg p-2 dark:text-white dark:bg-slate-700"/>
+  </div>
+  <button (click)="register()"
+          class="btn btn-primary p-3 w-full rounded-xl dark:bg-blue-700 cursor-pointer dark:text-white hover:bg-blue-500 transition-all duration-100">
+    Create account
+  </button>
+  <p class="text-center text-sm dark:text-white">
+    Have an account? <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-blue-500">Sign-in</a>
+  </p>
+  <p class="text-red-600 text-center">{{ error }}</p>
+</div>
