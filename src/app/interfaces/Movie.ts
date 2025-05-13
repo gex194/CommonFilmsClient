@@ -1,14 +1,18 @@
-import Genre from '../enums/Genre';
-
 interface Movie {
-  id: number;
-  title: string;
-  description: string;
-  year: number;
-  poster: string;
-  rating: number;
-  userId: number;
-  genres: Genre[];
+  id: number,
+  adult: boolean,
+  backdropPath: string,
+  genreIds: number[],
+  originalLanguage: string,
+  originalTitle: string,
+  overview: string,
+  popularity: number,
+  posterPath: string,
+  releaseDate: string,
+  title: string,
+  voteAverage: number,
+  voteCount: number,
+  video: boolean,
 }
 
 export default Movie;

@@ -3,12 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import LoginInput from '../interfaces/LoginInput';
 import RegisterInput from '../interfaces/RegisterInput';
 import User from '../interfaces/User';
+import {baseUrl} from '../constants/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl: string = "http://localhost:5250/api/Auth/"
+  private url: string = `${baseUrl}/api/Auth/`
   private currentUser: User = {
     name: '',
     email: '',
@@ -23,12 +24,12 @@ export class AuthService {
 
 
   login(loginInput: LoginInput) {
-    return this.http.post<string>(this.baseUrl + 'login',
+    return this.http.post<string>(this.url + 'login',
       {email: loginInput.email, password: loginInput.password})
   }
 
   register(registerInput: RegisterInput) {
-    return this.http.post<User>(this.baseUrl + "register", {...registerInput});
+    return this.http.post<User>(this.url + "register", {...registerInput});
   }
 
   setCurrentUser(user: User) {
